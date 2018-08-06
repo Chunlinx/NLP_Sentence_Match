@@ -1,0 +1,81 @@
+quora:
+  data:
+    num_word: 100000
+    num_category: 2
+    train_path: "dataSets/quora/train.tsv"
+    valid_path: "dataSets/quora/dev.tsv"
+    test_path: "dataSets/quora/test.tsv"
+    checkpoint_path: "./model_checkPoints/quora_checkpoints"
+  word:
+    pretrain: True
+    pretrain_word_vec_path: 
+    embedding_dim: 300
+  training:
+    fixlen: 20           # Cut or padding sequences to fixlen
+    device: "cpu"        # set to "CUDA:0" if using the first gpu.
+    epochs: 100           # # of epoches to train
+    batch_size: 128       # # of samples per batch
+    learning_rate: 0.0001
+    print_every: 10      # print info every #batch 
+  rnn:
+    state_size: 256
+  # test_para:
+  #   test_path: "../data/quora/test.tsv"
+  #   output_path: "../data/quora/predict.txt"
+
+
+
+# msr:
+#   train_para:
+#     train_path: "../data/msr/train.tsv"
+#     valid_path: "../data/msr/dev.tsv"
+#     dictionary_path: "../data/msr/dictionary.bin"
+#     checkpoint_path: "checkpoints/LSTM_CONCAT.pth"
+#     fixlen: 20           # Cut or padding sequences to fixlen
+#     device: "cpu"        # set to "CUDA:0" if using the first gpu.
+#     epochs: 10           # # of epoches to train
+#     batch_size: 32       # # of samples per batch
+#     print_every: 10      # print info every #batch
+#     early_stop_num: 15   
+#   embedding_para:
+#     embedding_dim: 300
+#     pretrain: False        # True/False
+#     pretrain_path: "xxx"  # Specify the location of pretrained word vectors.
+#   LSTM_para:
+#     bidirectional: True   # True/False
+#     num_layers: 1
+#     hidden_dim: 300
+#   MLP_para:
+#     dropout: 0.1
+#     hidden_dim: [600, 200, 200, 200, 1] # The first layer has 2*LSTM_hidden_dim elements.
+#   test_para:
+#     test_path: "../data/msr/test.tsv"
+#     output_path: "../data/msr/predict.txt"
+
+
+# atec:
+#   train_para:
+#     train_path: "../data/atec/train.tsv"
+#     valid_path: "../data/atec/dev.tsv"
+#     dictionary_path: "../data/atec/dictionary.bin"
+#     checkpoint_path: "checkpoints/LSTM_CONCAT.pth"
+#     fixlen: 20           # Cut or padding sequences to fixlen
+#     device: "cpu"        # set to "CUDA:0" if using the first gpu.
+#     epochs: 10           # # of epoches to train
+#     batch_size: 32       # # of samples per batch
+#     print_every: 10      # print info every #batch
+#     early_stop_num: 15   
+#   embedding_para:
+#     embedding_dim: 300
+#     pretrain: False        # True/False
+#     pretrain_path: "xxx"  # Specify the location of pretrained word vectors.
+#   LSTM_para:
+#     bidirectional: True   # True/False
+#     num_layers: 1
+#     hidden_dim: 300
+#   MLP_para:
+#     dropout: 0.1
+#     hidden_dim: [600, 200, 200, 200, 1] # The first layer has 2*LSTM_hidden_dim elements.
+#   test_para:
+#     test_path: "../data/atec/test.tsv"
+#     output_path: "../data/atec/predict.txt"

@@ -1,0 +1,149 @@
+quora:
+  data:
+    # num_word: 50000
+    num_category: 2
+    train_path: "dataSets/quora/train.tsv"
+    valid_path: "dataSets/quora/dev.tsv"
+    test_path: "dataSets/quora/test.tsv"
+    checkpoint_path: "./model_checkPoints/quora_checkpoints"
+  word:
+    pretrain: True
+    pretrained_word_path: "dataSets/quora/wordvec.txt"  # Specify the location of pretrained word vectors.
+    embedding_dim: 300
+  char:
+    with_char: False
+    num_char: 2000
+    embedding_dim: 300
+  model:
+    dropout_rate: 0.2
+    with_highway: True
+
+    with_match_highway: True 
+    highway_layer_num: 2
+
+    with_full_match: False
+    with_maxpool_match: True
+    with_attentive_match: True
+    with_max_attentive_match: True
+    
+
+    with_cosine: False  # 采用 consine 计算两个向量 相似度；
+    with_mp_cosine: True  # 采用  multi_perspective 计算；有一个 映射矩阵；
+    cosine_MP_dim: 2 
+
+    context_layer_num: 1 # support multiple context layer
+    context_lstm_dim: 256 
+    
+    aggregation_layer_num: 1
+    aggregation_lstm_dim: 256
+    with_aggregation_highway: True
+
+    att_type: 'symmetric'  # 'symmetric' or 'additive'
+    att_dim: 20
+    use_cudnn: False 
+  training:
+    fixlen: 20           # Cut or padding sequences to fixlen
+    epochs: 15           # # of epoches to train
+    batch_size: 128       # # of samples per batch
+    learning_rate: 0.0001
+    print_every: 10      # print info every #batch 
+
+msr:
+  data:
+    # num_word: 50000
+    num_category: 2
+    train_path: "dataSets/msr/train.tsv"
+    valid_path: "dataSets/msr/dev.tsv"
+    test_path: "dataSets/msr/test.tsv"
+    checkpoint_path: "./model_checkPoints/msr_checkpoints"
+  word:
+    pretrain: True
+    pretrained_word_path: "dataSets/msr/wordvec.txt"  # Specify the location of pretrained word vectors.
+    embedding_dim: 300
+  char:
+    with_char: False
+    num_char: 2000
+    embedding_dim: 300
+  model:
+    dropout_rate: 0.2
+    with_highway: True
+
+    with_match_highway: True 
+    highway_layer_num: 2
+
+    with_full_match: False
+    with_maxpool_match: True
+    with_attentive_match: True
+    with_max_attentive_match: True
+    
+
+    with_cosine: False  # 采用 consine 计算两个向量 相似度；
+    with_mp_cosine: True  # 采用  multi_perspective 计算；有一个 映射矩阵；
+    cosine_MP_dim: 2 
+
+    context_layer_num: 1 # support multiple context layer
+    context_lstm_dim: 256 
+    
+    aggregation_layer_num: 1
+    aggregation_lstm_dim: 256
+    with_aggregation_highway: True
+
+    att_type: 'symmetric'  # 'symmetric' or 'additive'
+    att_dim: 20
+    use_cudnn: False 
+  training:
+    fixlen: 20           # Cut or padding sequences to fixlen
+    epochs: 15           # # of epoches to train
+    batch_size: 128       # # of samples per batch
+    learning_rate: 0.0001
+    print_every: 10      # print info every #batch 
+
+atec:
+  data:
+    # num_word: 50000
+    num_category: 2
+    train_path: "dataSets/atec/train.tsv"
+    valid_path: "dataSets/atec/dev.tsv"
+    test_path: "dataSets/atec/test.tsv"
+    checkpoint_path: "./model_checkPoints/atec_checkpoints"
+  word:
+    pretrain: True
+    pretrained_word_path: "dataSets/atec/wordvec.txt"  # Specify the location of pretrained word vectors.
+    embedding_dim: 300
+  char:
+    with_char: False
+    num_char: 2000
+    embedding_dim: 300
+  model:
+    dropout_rate: 0.2
+    with_highway: True
+
+    with_match_highway: True 
+    highway_layer_num: 2
+
+    with_full_match: False
+    with_maxpool_match: True
+    with_attentive_match: True
+    with_max_attentive_match: True
+    
+
+    with_cosine: False  # 采用 consine 计算两个向量 相似度；
+    with_mp_cosine: True  # 采用  multi_perspective 计算；有一个 映射矩阵；
+    cosine_MP_dim: 2 
+
+    context_layer_num: 1 # support multiple context layer
+    context_lstm_dim: 256 
+    
+    aggregation_layer_num: 1
+    aggregation_lstm_dim: 256
+    with_aggregation_highway: True
+
+    att_type: 'symmetric'  # 'symmetric' or 'additive'
+    att_dim: 20
+    use_cudnn: False 
+  training:
+    fixlen: 20           # Cut or padding sequences to fixlen
+    epochs: 15           # # of epoches to train
+    batch_size: 128       # # of samples per batch
+    learning_rate: 0.0001
+    print_every: 10      # print info every #batch 
